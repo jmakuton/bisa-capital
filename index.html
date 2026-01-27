@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BISA Capital I — Infrastructure Impact Fund</title>
-  <meta name="description" content="BISA Capital I is an infrastructure impact investment fund focused on the energy transition in Poland.">
+  <title>BISA Capital I — Fundusz Infrastrukturalny</title>
+  <meta name="description" content="BISA Capital I to regulowany polski alternatywny fundusz inwestycyjny lokujący kapitał w projekty energetyczne i infrastrukturalne.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -143,6 +143,45 @@
       margin: 4px 0;
       border-radius: 1px;
       transition: all 0.3s;
+    }
+
+    /* ── Language Switcher ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 1.5rem;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      font-family: var(--font);
+      text-transform: uppercase;
+    }
+
+    .lang-btn:hover {
+      color: var(--navy);
+      background: var(--blue-light);
+    }
+
+    .lang-btn.active {
+      color: var(--navy);
+      background: var(--blue-light);
+      font-weight: 600;
+    }
+
+    .lang-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--border);
     }
 
     /* ── Hero ── */
@@ -527,6 +566,13 @@
 
       .mobile-toggle { display: block; }
 
+      .lang-switcher {
+        position: absolute;
+        top: 18px;
+        right: 3.5rem;
+        margin-left: 0;
+      }
+
       .hero { min-height: auto; }
 
       .hero-content { padding: 7rem 1.5rem 4rem; }
@@ -576,10 +622,15 @@
         <div class="logo-text">BISA Capital I</div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#focus">Focus</a></li>
-        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+        <li><a href="#about" data-i18n="nav.about">O funduszu</a></li>
+        <li><a href="#focus" data-i18n="nav.focus">Inwestycje</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Skontaktuj się</a></li>
       </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="pl">PL</button>
+        <span class="lang-divider"></span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -590,12 +641,12 @@
   <section class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <span class="hero-label">Infrastructure Impact Fund</span>
-      <h1>Investing in the energy transition</h1>
-      <p class="hero-subtitle">BISA Capital I is a regulated Polish alternative investment fund deploying equity into energy and infrastructure projects across Poland.</p>
+      <span class="hero-label" data-i18n="hero.label">Fundusz Infrastrukturalny</span>
+      <h1 data-i18n="hero.title">Inwestowanie w transformację energetyczną</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">BISA Capital I to regulowany polski alternatywny fundusz inwestycyjny lokujący kapitał w projekty energetyczne i infrastrukturalne w całej Polsce.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-white">Request Information</a>
-        <a href="#about" class="btn btn-outline">Learn More</a>
+        <a href="#contact" class="btn btn-white" data-i18n="hero.cta1">Zapytaj o informacje</a>
+        <a href="#about" class="btn btn-outline" data-i18n="hero.cta2">Dowiedz się więcej</a>
       </div>
     </div>
   </section>
@@ -604,38 +655,38 @@
   <section class="about" id="about">
     <div class="about-inner">
       <div class="about-left fade-in">
-        <p class="section-label">About the Fund</p>
-        <h2>Real assets. Measurable impact.</h2>
-        <p>BISA Capital I deploys equity into infrastructure projects that contribute to Poland's energy transition. The fund is structured as a Polish ASI &mdash; a regulated alternative investment vehicle &mdash; and invests alongside local debt financing into real assets with tangible economic and environmental outcomes.</p>
+        <p class="section-label" data-i18n="about.label">O funduszu</p>
+        <h2 data-i18n="about.title">Realne aktywa. Mierzalny wpływ.</h2>
+        <p data-i18n="about.text">BISA Capital I lokuje kapitał własny w projekty infrastrukturalne, które przyczyniają się do transformacji energetycznej Polski. Fundusz działa jako polski ASI – regulowany alternatywny instrument inwestycyjny – i inwestuje wspólnie z lokalnym finansowaniem dłużnym w realne aktywa z wymiernymi efektami ekonomicznymi i środowiskowymi.</p>
       </div>
       <div class="about-right">
         <div class="about-card fade-in">
           <div class="card-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>Regulated Structure</h3>
-          <p>Polish Alternative Investment Fund under institutional-grade governance.</p>
+          <h3 data-i18n="about.card1.title">Regulowana struktura</h3>
+          <p data-i18n="about.card1.text">Polski alternatywny fundusz inwestycyjny pod nadzorem instytucjonalnym.</p>
         </div>
         <div class="about-card fade-in">
           <div class="card-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <h3>EUR Denominated</h3>
-          <p>Fund operates in EUR with local currency exposure managed at project level.</p>
+          <h3 data-i18n="about.card2.title">Denominowany w EUR</h3>
+          <p data-i18n="about.card2.text">Fundusz działa w EUR z ekspozycją walutową zarządzaną na poziomie projektu.</p>
         </div>
         <div class="about-card fade-in">
           <div class="card-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
-          <h3>Real Assets</h3>
-          <p>Every euro of equity is deployed into physical infrastructure with measurable output.</p>
+          <h3 data-i18n="about.card3.title">Realne aktywa</h3>
+          <p data-i18n="about.card3.text">Każde euro kapitału jest lokowane w fizyczną infrastrukturę z mierzalną produkcją.</p>
         </div>
         <div class="about-card fade-in">
           <div class="card-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
           </div>
-          <h3>Impact Aligned</h3>
-          <p>Investments contribute directly to Poland's energy transition and climate objectives.</p>
+          <h3 data-i18n="about.card4.title">Wpływ zgodny z celami</h3>
+          <p data-i18n="about.card4.text">Inwestycje bezpośrednio przyczyniają się do transformacji energetycznej i celów klimatycznych Polski.</p>
         </div>
       </div>
     </div>
@@ -644,37 +695,37 @@
   <!-- Focus -->
   <section class="focus" id="focus">
     <div class="focus-inner">
-      <p class="section-label">Investment Focus</p>
-      <h2>Energy &amp; infrastructure in Poland</h2>
-      <p>The fund targets a diversified set of infrastructure assets across the Polish energy transition landscape.</p>
+      <p class="section-label" data-i18n="focus.label">Obszar inwestycji</p>
+      <h2 data-i18n="focus.title">Energia i infrastruktura w Polsce</h2>
+      <p data-i18n="focus.text">Fundusz inwestuje w zdywersyfikowany zestaw aktywów infrastrukturalnych w obszarze transformacji energetycznej Polski.</p>
       <div class="focus-grid">
         <div class="focus-item fade-in">
           <div class="icon-wrap">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           </div>
-          <h3>Solar PV</h3>
-          <p>Utility-scale photovoltaic installations</p>
+          <h3 data-i18n="focus.item1.title">Fotowoltaika</h3>
+          <p data-i18n="focus.item1.text">Instalacje fotowoltaiczne na dużą skalę</p>
         </div>
         <div class="focus-item fade-in">
           <div class="icon-wrap">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
           </div>
-          <h3>Wind</h3>
-          <p>Onshore wind energy projects</p>
+          <h3 data-i18n="focus.item2.title">Energia wiatrowa</h3>
+          <p data-i18n="focus.item2.text">Projekty energii wiatrowej na lądzie</p>
         </div>
         <div class="focus-item fade-in">
           <div class="icon-wrap">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="12" rx="2" ry="2"/><line x1="6" y1="6" x2="6" y2="18"/><line x1="18" y1="6" x2="18" y2="18"/></svg>
           </div>
-          <h3>Energy Storage</h3>
-          <p>Battery storage systems (BES)</p>
+          <h3 data-i18n="focus.item3.title">Magazyny energii</h3>
+          <p data-i18n="focus.item3.text">Systemy magazynowania energii (BES)</p>
         </div>
         <div class="focus-item fade-in">
           <div class="icon-wrap">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3>E-Mobility &amp; More</h3>
-          <p>EV charging, hydrogen, and emerging infrastructure</p>
+          <h3 data-i18n="focus.item4.title">E-mobilność i więcej</h3>
+          <p data-i18n="focus.item4.text">Ładowarki EV, wodór i nowa infrastruktura</p>
         </div>
       </div>
     </div>
@@ -683,9 +734,9 @@
   <!-- CTA -->
   <section class="cta" id="contact">
     <div class="cta-inner fade-in">
-      <h2>Interested in learning more?</h2>
-      <p>BISA Capital I is open to qualified investors. Contact us for further information about the fund.</p>
-      <a href="mailto:contact@bisacapital.com" class="btn btn-navy">Get in Touch</a>
+      <h2 data-i18n="cta.title">Chcesz dowiedzieć się więcej?</h2>
+      <p data-i18n="cta.text">BISA Capital I jest otwarty dla wykwalifikowanych inwestorów. Skontaktuj się z nami, aby uzyskać więcej informacji o funduszu.</p>
+      <a href="mailto:contact@bisacapital.com" class="btn btn-navy" data-i18n="cta.button">Skontaktuj się</a>
     </div>
   </section>
 
@@ -709,6 +760,7 @@
   </div>
 
   <script>
+    // Mobile menu toggle
     document.getElementById('mobileToggle').addEventListener('click', function() {
       document.getElementById('navLinks').classList.toggle('open');
     });
@@ -719,6 +771,7 @@
       });
     });
 
+    // Intersection observer for fade-in animations
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -730,6 +783,135 @@
     document.querySelectorAll('.fade-in').forEach(function(el) {
       observer.observe(el);
     });
+
+    // Language translations
+    var translations = {
+      pl: {
+        'nav.about': 'O funduszu',
+        'nav.focus': 'Inwestycje',
+        'nav.contact': 'Skontaktuj się',
+        'hero.label': 'Fundusz Infrastrukturalny',
+        'hero.title': 'Inwestowanie w transformację energetyczną',
+        'hero.subtitle': 'BISA Capital I to regulowany polski alternatywny fundusz inwestycyjny lokujący kapitał w projekty energetyczne i infrastrukturalne w całej Polsce.',
+        'hero.cta1': 'Zapytaj o informacje',
+        'hero.cta2': 'Dowiedz się więcej',
+        'about.label': 'O funduszu',
+        'about.title': 'Realne aktywa. Mierzalny wpływ.',
+        'about.text': 'BISA Capital I lokuje kapitał własny w projekty infrastrukturalne, które przyczyniają się do transformacji energetycznej Polski. Fundusz działa jako polski ASI – regulowany alternatywny instrument inwestycyjny – i inwestuje wspólnie z lokalnym finansowaniem dłużnym w realne aktywa z wymiernymi efektami ekonomicznymi i środowiskowymi.',
+        'about.card1.title': 'Regulowana struktura',
+        'about.card1.text': 'Polski alternatywny fundusz inwestycyjny pod nadzorem instytucjonalnym.',
+        'about.card2.title': 'Denominowany w EUR',
+        'about.card2.text': 'Fundusz działa w EUR z ekspozycją walutową zarządzaną na poziomie projektu.',
+        'about.card3.title': 'Realne aktywa',
+        'about.card3.text': 'Każde euro kapitału jest lokowane w fizyczną infrastrukturę z mierzalną produkcją.',
+        'about.card4.title': 'Wpływ zgodny z celami',
+        'about.card4.text': 'Inwestycje bezpośrednio przyczyniają się do transformacji energetycznej i celów klimatycznych Polski.',
+        'focus.label': 'Obszar inwestycji',
+        'focus.title': 'Energia i infrastruktura w Polsce',
+        'focus.text': 'Fundusz inwestuje w zdywersyfikowany zestaw aktywów infrastrukturalnych w obszarze transformacji energetycznej Polski.',
+        'focus.item1.title': 'Fotowoltaika',
+        'focus.item1.text': 'Instalacje fotowoltaiczne na dużą skalę',
+        'focus.item2.title': 'Energia wiatrowa',
+        'focus.item2.text': 'Projekty energii wiatrowej na lądzie',
+        'focus.item3.title': 'Magazyny energii',
+        'focus.item3.text': 'Systemy magazynowania energii (BES)',
+        'focus.item4.title': 'E-mobilność i więcej',
+        'focus.item4.text': 'Ładowarki EV, wodór i nowa infrastruktura',
+        'cta.title': 'Chcesz dowiedzieć się więcej?',
+        'cta.text': 'BISA Capital I jest otwarty dla wykwalifikowanych inwestorów. Skontaktuj się z nami, aby uzyskać więcej informacji o funduszu.',
+        'cta.button': 'Skontaktuj się'
+      },
+      en: {
+        'nav.about': 'About',
+        'nav.focus': 'Focus',
+        'nav.contact': 'Get in Touch',
+        'hero.label': 'Infrastructure Impact Fund',
+        'hero.title': 'Investing in the energy transition',
+        'hero.subtitle': 'BISA Capital I is a regulated Polish alternative investment fund deploying equity into energy and infrastructure projects across Poland.',
+        'hero.cta1': 'Request Information',
+        'hero.cta2': 'Learn More',
+        'about.label': 'About the Fund',
+        'about.title': 'Real assets. Measurable impact.',
+        'about.text': 'BISA Capital I deploys equity into infrastructure projects that contribute to Poland\'s energy transition. The fund is structured as a Polish ASI — a regulated alternative investment vehicle — and invests alongside local debt financing into real assets with tangible economic and environmental outcomes.',
+        'about.card1.title': 'Regulated Structure',
+        'about.card1.text': 'Polish Alternative Investment Fund under institutional-grade governance.',
+        'about.card2.title': 'EUR Denominated',
+        'about.card2.text': 'Fund operates in EUR with local currency exposure managed at project level.',
+        'about.card3.title': 'Real Assets',
+        'about.card3.text': 'Every euro of equity is deployed into physical infrastructure with measurable output.',
+        'about.card4.title': 'Impact Aligned',
+        'about.card4.text': 'Investments contribute directly to Poland\'s energy transition and climate objectives.',
+        'focus.label': 'Investment Focus',
+        'focus.title': 'Energy & infrastructure in Poland',
+        'focus.text': 'The fund targets a diversified set of infrastructure assets across the Polish energy transition landscape.',
+        'focus.item1.title': 'Solar PV',
+        'focus.item1.text': 'Utility-scale photovoltaic installations',
+        'focus.item2.title': 'Wind',
+        'focus.item2.text': 'Onshore wind energy projects',
+        'focus.item3.title': 'Energy Storage',
+        'focus.item3.text': 'Battery storage systems (BES)',
+        'focus.item4.title': 'E-Mobility & More',
+        'focus.item4.text': 'EV charging, hydrogen, and emerging infrastructure',
+        'cta.title': 'Interested in learning more?',
+        'cta.text': 'BISA Capital I is open to qualified investors. Contact us for further information about the fund.',
+        'cta.button': 'Get in Touch'
+      }
+    };
+
+    // Language switcher functionality
+    var currentLang = 'pl';
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      // Update all elements with data-i18n attribute
+      document.querySelectorAll('[data-i18n]').forEach(function(element) {
+        var key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      // Update page title and meta description
+      if (lang === 'pl') {
+        document.title = 'BISA Capital I — Fundusz Infrastrukturalny';
+        document.querySelector('meta[name="description"]').setAttribute('content',
+          'BISA Capital I to regulowany polski alternatywny fundusz inwestycyjny lokujący kapitał w projekty energetyczne i infrastrukturalne.');
+      } else {
+        document.title = 'BISA Capital I — Infrastructure Impact Fund';
+        document.querySelector('meta[name="description"]').setAttribute('content',
+          'BISA Capital I is an infrastructure impact investment fund focused on the energy transition in Poland.');
+      }
+
+      // Update active state on language buttons
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Store preference in localStorage
+      localStorage.setItem('preferredLanguage', lang);
+    }
+
+    // Language button click handlers
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var lang = this.getAttribute('data-lang');
+        switchLanguage(lang);
+      });
+    });
+
+    // Load saved language preference or default to Polish
+    var savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang && (savedLang === 'pl' || savedLang === 'en')) {
+      switchLanguage(savedLang);
+    } else {
+      switchLanguage('pl');
+    }
   </script>
 
 </body>
